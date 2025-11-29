@@ -27,13 +27,25 @@ def health_check():
 
 
 
+from fastapi.middleware.cors import CORSMiddleware
+
+origins = ["*"]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # allow Expo mobile
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# app.add_middleware(
+#     CORSMiddleware,
+#     allow_origins=["*"],  # Allow Expo app
+#     allow_credentials=True,
+#     allow_methods=["*"],
+#     allow_headers=["*"],
+# )
 
 sqlite_file_name = "todo.db"
 sqlite_url = f"sqlite:///{sqlite_file_name}"
