@@ -1,12 +1,12 @@
-🖥 Todo App API — FastAPI
+## 🖥 Todo App API — FastAPI
 
 A fully functional backend API built using FastAPI, SQLModel, and JWT Authentication.
 Designed specifically for the Todo Mobile App.
 
 ⸻
 
-🚀 Features
-
+## 🚀 Features
+```
 🔐 Authentication
 	•	Signup
 	•	Login
@@ -22,27 +22,28 @@ Designed specifically for the Todo Mobile App.
 
 👤 User Profile
 	•	Fetch authenticated user details
-
+```
 ⸻
 
-🛠 Tech Stack
+## 🛠 Tech Stack
+```
 	•	FastAPI
 	•	SQLModel
 	•	SQLite
 	•	JWT (python-jose)
 	•	Passlib (bcrypt hashing)
 	•	Uvicorn
-
-📂 Project Structure
-
+```
+## 📂 Project Structure
+```
 backend/
  ├── main.py
  ├── todo.db (auto-generated)
  ├── requirements.txt
  └── README.md
-
- 🔧 Setup & Installation
-
+```
+ ## 🔧 Setup & Installation
+```
 1️⃣ Create virtual environment
 python3 -m venv todoenv
 source todoenv/bin/activate   # macOS/Linux
@@ -53,9 +54,9 @@ pip install -r requirements.txt
 
 3️⃣ Start server
 uvicorn main:app --reload --host 0.0.0.0 --port 8000
-
-🧪 Testing (Postman)
-
+```
+## 🧪 Testing (Postman)
+```
 Import these endpoints:
 	•	POST /auth/signup
 	•	POST /auth/login
@@ -63,7 +64,7 @@ Import these endpoints:
 	•	POST /todos
 	•	GET /todos
 	•	DELETE /todos/{id}
-
+```
 ⸻
 
 📄 License
