@@ -39,14 +39,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# app.add_middleware(
-#     CORSMiddleware,
-#     allow_origins=["*"],  # Allow Expo app
-#     allow_credentials=True,
-#     allow_methods=["*"],
-#     allow_headers=["*"],
-# )
-
+# DATABASE
 sqlite_file_name = "todo.db"
 sqlite_url = f"sqlite:///{sqlite_file_name}"
 engine = create_engine(sqlite_url, echo=False, connect_args={"check_same_thread": False})
@@ -148,13 +141,6 @@ def signup(user_in: UserCreate, session: Session = Depends(get_session)):
     access_token = create_access_token({"sub": user.email})
     return {"access_token": access_token, "token_type": "bearer"}
 
-# @app.post("/auth/login", response_model=Token)
-# def login(form_data: OAuth2PasswordRequestForm = Depends(), session: Session = Depends(get_session)):
-#     user = get_user_by_email(session, form_data.username)
-#     if not user or not verify_password(form_data.password, user.hashed_password):
-#         raise HTTPException(status_code=400, detail="Incorrect username or password")
-#     access_token = create_access_token({"sub": user.email})
-#     return {"access_token": access_token, "token_type": "bearer"}
 
 class LoginRequest(BaseModel):
     email: str
